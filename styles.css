@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --neon-green: #00ff9f;
+    --electric-blue: #00d4ff;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Glassmorphism & Glows */
+.glass {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 159, 0.1);
+}
+
+.neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 159, 0.3);
+}
+
+.neon-glow:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 159, 0.5);
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-12px) rotate(1deg);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+/* Terminal Cursor */
+.terminal-cursor::after {
+    content: '_';
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Matrix Background */
+#matrix-bg {
+    background-image: 
+        linear-gradient(rgba(0, 255, 159, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 159, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Active Nav */
+.nav-link.active {
+    color: #00ff9f;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ff9f;
+}
